@@ -1,0 +1,16 @@
+BEGIN;
+
+CREATE SCHEMA IF NOT EXISTS dbo;
+
+USE dbo;
+
+CREATE TABLE IF NOT EXISTS dbo.human (
+    id BIGINT AUTO_INCREMENT,
+    dna_hash VARCHAR(32) NOT NULL ,
+    is_mutant BOOLEAN NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE INDEX IF NOT EXISTS dna_hash ON dbo.Dna(dna_hash);
+
+COMMIT;
